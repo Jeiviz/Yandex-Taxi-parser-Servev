@@ -21,10 +21,10 @@ volumes:
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
-  DATABASE_HOST: db
-  DATABASE_NAME: vapor_database
-  DATABASE_USERNAME: vapor_username
-  DATABASE_PASSWORD: vapor_password
+  DATABASE_HOST: taxi
+  DATABASE_NAME: taxi_database
+  DATABASE_USERNAME: taxi_username
+  DATABASE_PASSWORD: taxi_password
   
 services:
   app:

@@ -9,6 +9,16 @@ func routes(_ app: Application) throws {
     app.get("hello") { req async -> String in
         "Hello, world!"
     }
-
-    try app.register(collection: TodoController())
+    
+//    app.post("api") { req -> EventLoopFuture<Order> in
+//        let order = try req.content.decode(Order.self)
+//        
+//        return order.save(on: req.db).map({ order })
+//    }
+    
+    app.post("api") { req -> EventLoopFuture<Order> in
+        let order = try req.content.decode(Order.self)
+        
+        return order.save(on: req.db).map { order }
+    }
 }
